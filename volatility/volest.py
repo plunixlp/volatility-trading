@@ -222,7 +222,7 @@ class VolatilityEstimator(object):
 
         # set and format the y-axis labels
         locs = cones.get_yticks().tolist()
-        #label_format = '{:,.1f}'  # 创建浮点数格式 .1f一位小数
+       
         cones.yaxis.set_major_locator(mticker.FixedLocator(locs))  
         cones.set_yticklabels(list(map(f, locs)))
 
@@ -240,8 +240,9 @@ class VolatilityEstimator(object):
         box.plot([i for i in range(1, len(windows)+1)], realized, color='r', marker='*', markeredgecolor='k')
 
         # set and format the y-axis labels
-        locs = box.get_yticks()
-        box.set_yticklabels(map(f, locs))
+        locs = box.get_yticks().tolist()
+        cones.yaxis.set_major_locator(mticker.FixedLocator(locs))  
+        box.set_yticklabels(list(map(f, locs)))
 
         # move the y-axis ticks on the right side
         box.yaxis.tick_right()
@@ -311,8 +312,9 @@ class VolatilityEstimator(object):
         cones.plot(date, realized, 'r-.', label="Realized")
         
         # set and format the y-axis labels
-        locs = cones.get_yticks()
-        cones.set_yticklabels(map(f, locs))
+        locs = cones.get_yticks().tolist()
+        cones.yaxis.set_major_locator(mticker.FixedLocator(locs))
+        cones.set_yticklabels(list(map(f, locs)))
         
         # turn on the grid
         cones.grid(True, axis='y', which='major', alpha=0.5)
@@ -328,8 +330,9 @@ class VolatilityEstimator(object):
         box.plot(1, last, color='r', marker='*', markeredgecolor='k')
         
         # set and format the y-axis labels
-        locs = box.get_yticks()
-        box.set_yticklabels(map(f, locs))
+        locs = box.get_yticks().tolist()
+        cones.yaxis.set_major_locator(mticker.FixedLocator(locs))
+        box.set_yticklabels(list(map(f, locs)))
         
         # move the y-axis ticks on the right side
         box.yaxis.tick_right()
@@ -384,8 +387,9 @@ class VolatilityEstimator(object):
         cones.plot(date, realized, 'r-.', label="Realized")
         
         # set and format the y-axis labels
-        locs = cones.get_yticks()
-        cones.set_yticklabels(map(f, locs))
+        locs = cones.get_yticks().tolist()
+        cones.yaxis.set_major_locator(mticker.FixedLocator(locs))  
+        cones.set_yticklabels(list(map(f, locs)))
         
         # turn on the grid
         cones.grid(True, axis='y', which='major', alpha=0.5)
@@ -401,8 +405,9 @@ class VolatilityEstimator(object):
         box.plot(1, last, color='r', marker='*', markeredgecolor='k')
         
         # set and format the y-axis labels
-        locs = box.get_yticks()
-        box.set_yticklabels(map(f, locs))
+        locs = box.get_yticks().tolist()
+        cones.yaxis.set_major_locator(mticker.FixedLocator(locs)) 
+        box.set_yticklabels(list(map(f, locs)))
         
         # move the y-axis ticks on the right side
         box.yaxis.tick_right()
@@ -465,8 +470,9 @@ class VolatilityEstimator(object):
         cones.plot(date, realized, 'r-.', label="Realized")
         
         # set and format the y-axis labels
-        locs = cones.get_yticks()
-        cones.set_yticklabels(map(f, locs))
+        locs = cones.get_yticks().tolist()
+        cones.yaxis.set_major_locator(mticker.FixedLocator(locs)) 
+        cones.set_yticklabels(list(map(f, locs)))
         
         # turn on the grid
         cones.grid(True, axis='y', which='major', alpha=0.5)
@@ -484,8 +490,9 @@ class VolatilityEstimator(object):
         box.plot(1, last, color='r', marker='*', markeredgecolor='k')
         
         # set and format the y-axis labels
-        locs = box.get_yticks()
-        box.set_yticklabels(map(f, locs))
+        locs = box.get_yticks().tolist()
+        cones.yaxis.set_major_locator(mticker.FixedLocator(locs)) 
+        box.set_yticklabels(list(map(f, locs)))
         
         # move the y-axis ticks on the right side
         box.yaxis.tick_right()
@@ -598,8 +605,9 @@ class VolatilityEstimator(object):
         cones.plot(date, x, label=self._bench_symbol)
         
         # set and format the y-axis labels
-        locs = cones.get_yticks()
-        cones.set_yticklabels(map(f, locs))
+        locs = cones.get_yticks().tolist()
+        cones.yaxis.set_major_locator(mticker.FixedLocator(locs)) 
+        cones.set_yticklabels(list(map(f, locs)))
         
         # turn on the grid
         cones.grid(True, axis='y', which='major', alpha=0.5)
@@ -668,8 +676,9 @@ class VolatilityEstimator(object):
         cones.set_ylim((corr.min() - 0.05, corr.max() + 0.05))
 
         # set and format the y-axis labels
-        locs = cones.get_yticks()
-        cones.set_yticklabels(map(f, locs))
+        locs = cones.get_yticks().tolist()
+        cones.yaxis.set_major_locator(mticker.FixedLocator(locs)) 
+        cones.set_yticklabels(list(map(f, locs)))
 
         # turn on the grid
         cones.grid(True, axis='y', which='major', alpha=0.5)
