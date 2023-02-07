@@ -241,7 +241,7 @@ class VolatilityEstimator(object):
 
         # set and format the y-axis labels
         locs = box.get_yticks().tolist()
-        cones.yaxis.set_major_locator(mticker.FixedLocator(locs))  
+        box.yaxis.set_major_locator(mticker.FixedLocator(locs))  
         box.set_yticklabels(list(map(f, locs)))
 
         # move the y-axis ticks on the right side
@@ -331,7 +331,7 @@ class VolatilityEstimator(object):
         
         # set and format the y-axis labels
         locs = box.get_yticks().tolist()
-        cones.yaxis.set_major_locator(mticker.FixedLocator(locs))
+        box.yaxis.set_major_locator(mticker.FixedLocator(locs))
         box.set_yticklabels(list(map(f, locs)))
         
         # move the y-axis ticks on the right side
@@ -406,7 +406,7 @@ class VolatilityEstimator(object):
         
         # set and format the y-axis labels
         locs = box.get_yticks().tolist()
-        cones.yaxis.set_major_locator(mticker.FixedLocator(locs)) 
+        box.yaxis.set_major_locator(mticker.FixedLocator(locs)) 
         box.set_yticklabels(list(map(f, locs)))
         
         # move the y-axis ticks on the right side
@@ -491,7 +491,7 @@ class VolatilityEstimator(object):
         
         # set and format the y-axis labels
         locs = box.get_yticks().tolist()
-        cones.yaxis.set_major_locator(mticker.FixedLocator(locs)) 
+        box.yaxis.set_major_locator(mticker.FixedLocator(locs)) 
         box.set_yticklabels(list(map(f, locs)))
         
         # move the y-axis ticks on the right side
