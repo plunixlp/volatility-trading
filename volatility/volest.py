@@ -7,7 +7,9 @@ from scipy.stats import norm
 import statsmodels.api as sm
 import matplotlib
 import matplotlib.pyplot as plt
+import matplotlib.ticker as mticker
 from matplotlib.backends.backend_pdf import PdfPages
+
 
 from volatility import models
 
