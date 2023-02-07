@@ -63,7 +63,7 @@ class VolatilityEstimator(object):
         if isinstance(price_data, pandas.DataFrame) and not \
                 PRICE_COLUMNS.issubset(price_data.columns):
             raise ValueError('price_data requires Open, High, Low, Close')
-        if (price_data.symbol is None)|(price_data.symbol.any() == ''):
+        if (price_data.symbol is None) or (price_data.symbol == ''):
             raise ValueError('Symbol required as property of price_data')
         if estimator not in ESTIMATORS:
             raise ValueError('Acceptable volatility model is required')
