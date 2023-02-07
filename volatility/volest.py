@@ -224,7 +224,7 @@ class VolatilityEstimator(object):
         locs = cones.get_yticks().tolist()
         #label_format = '{:,.1f}'  # 创建浮点数格式 .1f一位小数
         cones.yaxis.set_major_locator(mticker.FixedLocator(locs))  
-        cones.set_yticklabels(list(map(f, locs))
+        cones.set_yticklabels(list(map(f, locs)))
 
         # turn on the grid
         cones.grid(True, axis='y', which='major', alpha=0.5)
