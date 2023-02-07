@@ -219,8 +219,10 @@ class VolatilityEstimator(object):
         cones.set_xlim((windows[0]-5, windows[-1]+5))
 
         # set and format the y-axis labels
-        locs = cones.get_yticks()
-        cones.set_yticklabels(map(f, locs))
+        locs = cones.get_yticks().tolist()
+        label_format = '{:,.1f}'  # 创建浮点数格式 .1f一位小数
+        cones.yaxis.set_major_locator(mticker.FixedLocator(locs))  
+        cones.set_yticklabels([label_format.format(x) for x in map(f, locs)])
 
         # turn on the grid
         cones.grid(True, axis='y', which='major', alpha=0.5)
@@ -525,7 +527,7 @@ class VolatilityEstimator(object):
         last = estimator[-1]
 
         fig = plt.figure(figsize=(8, 6))
-        
+
         cumulative = False
         density = False
         if normed:
